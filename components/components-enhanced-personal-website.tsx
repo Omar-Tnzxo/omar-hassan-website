@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion'
-import { FaLinkedin, FaTwitter, FaInstagram, FaTelegram, FaFacebookF, FaEnvelope, FaPhone, FaMapMarkerAlt, FaSun, FaMoon, FaArrowUp, FaGithub, FaFileDownload, FaWhatsapp, FaTiktok } from 'react-icons/fa'
+import { FaLinkedin, FaTwitter, FaInstagram, FaTelegram, FaFacebookF, FaEnvelope, FaPhone, FaMapMarkerAlt, FaSun, FaMoon, FaArrowUp, FaGithub, FaFileDownload, FaWhatsapp, FaTiktok, FaChevronDown } from 'react-icons/fa'
 import { SiMicrosoft, SiTelegram } from 'react-icons/si'
 import { MdRealEstateAgent, MdComputer, MdBusiness, MdAnalytics, MdTrendingUp, MdPeople, MdSearch } from 'react-icons/md'
 import Head from 'next/head'
@@ -17,7 +17,7 @@ const neonColors = {
   quaternary: '#ff8000',
 }
 
-export function EnhancedPersonalWebsite() {
+export default function EnhancedNeonPersonalWebsiteComponent() {
   const [activePage, setActivePage] = useState('Home')
   const [darkMode, setDarkMode] = useState(true)
   const [showScrollTop, setShowScrollTop] = useState(false)
@@ -180,63 +180,7 @@ export function EnhancedPersonalWebsite() {
         <FAQPage darkMode={darkMode} />
         <AnimatedSection darkMode={darkMode} />
       </main>
-      <footer className={`${darkMode ? 'bg-gray-800' : 'bg-gray-200'} py-12 transition-colors duration-300`}>
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div>
-              <h3 className="text-2xl font-bold mb-6">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
-                  Omar Hassan
-                </span>
-              </h3>
-              <p className={`${darkMode ? 'text-gray-400' : 'text-gray-600'} mb-6`}>
-                Empowering businesses with innovative digital strategies and cutting-edge real estate solutions.
-              </p>
-              <div className="flex space-x-4">
-                <SocialIcon Icon={FaFacebookF} url="https://facebook.com/Omar.Tnzxo" darkMode={darkMode} />
-                <SocialIcon Icon={FaInstagram} url="https://Instagram.com/Omar.Tnzxo" darkMode={darkMode} />
-                <SocialIcon Icon={FaLinkedin} url="https://LinkedIn.com/in/Omar-Tnzxo" darkMode={darkMode} />
-                <SocialIcon Icon={FaTiktok} url="https://tiktok.com/@omar.tnzxo" darkMode={darkMode} />
-                <SocialIcon Icon={FaTelegram} url="https://t.me/Omar_Tnzxo" darkMode={darkMode} />
-                <SocialIcon Icon={FaTwitter} url="https://x.com/OmarTnzxo" darkMode={darkMode} />
-                <SocialIcon Icon={FaGithub} url="https://github.com/Omar-Tnzxo" darkMode={darkMode} />
-                <SocialIcon Icon={FaWhatsapp} url="https://wa.me/+201029752972" darkMode={darkMode} />
-              </div>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-6">Quick Links</h3>
-              <div className="grid grid-cols-2 gap-4">
-                {navItems.map((item) => (
-                  <a 
-                    key={item}
-                    href={`#${item.toLowerCase()}`}
-                    className={`cursor-pointer ${darkMode ? 'text-gray-400 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'} transition-colors`}
-                  >
-                    {item}
-                  </a>
-                ))}
-              </div>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-6">Contact Information</h3>
-              <ul className={`space-y-4 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-                <li className="flex items-center">
-                  <FaEnvelope className="mr-4 text-blue-400" /> omar-agha@engineer.com
-                </li>
-                <li className="flex items-center">
-                  <FaPhone className="mr-4 text-green-400" /> +201029752972
-                </li>
-                <li className="flex items-center">
-                  <FaMapMarkerAlt className="mr-4 text-red-400" /> Egypt, Giza, 6 October City
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="mt-12 pt-8 border-t border-gray-700 text-center">
-            <p className={`${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>© 2024 Omar Hassan. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer darkMode={darkMode} />
       {showScrollTop && (
         <motion.button
           className={`fixed bottom-8 right-8 p-3 rounded-full ${darkMode ? 'bg-gray-700' : 'bg-gray-300'} text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600`}
@@ -276,7 +220,6 @@ export function EnhancedPersonalWebsite() {
               whileTap={{ scale: 0.95 }}
             >
               <a
-                
                 href={`#${item.toLowerCase()}`}
                 className={`w-3 h-3 rounded-full block transition-all duration-300 ${
                   activePage === item ? 'bg-gradient-to-r from-blue-400 to-purple-600 w-6' : `${darkMode ? 'bg-gray-600' : 'bg-gray-400'}`
@@ -335,10 +278,10 @@ function HomePage({ darkMode }: { darkMode: boolean }) {
             animate={{
               scale: [1, 1.2, 1],
               rotate: [0, 360],
-              borderRadius: ["50%", "40%", "50%"]
+              borderRadius: ["50%", "25%", "50%"]
             }}
             transition={{
-              duration: 3,
+              duration: 5,
               ease: "easeInOut",
               times: [0, 0.5, 1],
               repeat: Infinity,
@@ -352,10 +295,10 @@ function HomePage({ darkMode }: { darkMode: boolean }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
-          Omar Hassan
+          I&apos;m Omar Hassan
         </motion.h2>
         <motion.h3 
-          className={`text-3xl font-poppins mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}
+          className={`text-3xl font-poppins mb-6 ${darkMode ?   'text-gray-300' : 'text-gray-700'}`}
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.5 }}
@@ -528,8 +471,8 @@ function ExperiencePage({ darkMode }: { darkMode: boolean }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: index * 0.1, duration: 0.5 }}
         >
-          <h3 className="text-2xl font-bold mb-2">{exp.company}</h3>
-          <h4 className="text-xl font-semibold mb-2">{exp.role}</h4>
+          <h3 className="text-2xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">{exp.company}</h3>
+          <h4 className="text-xl font-semibold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">{exp.role}</h4>
           <p className={`mb-4 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>{exp.period}</p>
           <p className={`mb-4 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>{exp.description}</p>
           <ul className={`list-disc list-inside ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
@@ -963,7 +906,7 @@ function ContactPage({ darkMode }: { darkMode: boolean }) {
       await new Promise(resolve => setTimeout(resolve, 2000))
       setSubmitStatus('success')
       setFormData({ name: '', email: '', message: '' })
-    } catch {
+    } catch (error) {
       setSubmitStatus('error')
     }
     setIsSubmitting(false)
@@ -986,7 +929,7 @@ function ContactPage({ darkMode }: { darkMode: boolean }) {
         >
           <h3 className="text-2xl font-bold mb-4">Get in Touch</h3>
           <p className={`mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-            I&apos;m always open to new opportunities and collaborations. Whether you have a question about real estate, digital marketing, or just want to say hello, I&apos;d love to hear from you!
+            I'm always open to new opportunities and collaborations. Whether you have a question about real estate, digital marketing, or just want to say hello, I'd love to hear from you!
           </p>
           <div className={`space-y-4 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
             <div className="flex items-center">
@@ -1094,6 +1037,8 @@ function ContactPage({ darkMode }: { darkMode: boolean }) {
 }
 
 function FAQPage({ darkMode }: { darkMode: boolean }) {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
   const faqs = [
     {
       question: "What real estate consulting services do you offer?",
@@ -1135,22 +1080,30 @@ function FAQPage({ darkMode }: { darkMode: boolean }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
           >
-            <motion.h3 
-              className="text-xl font-bold mb-2"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: index * 0.1 + 0.2 }}
+            <button
+              className="flex justify-between items-center w-full text-left"
+              onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
             >
-              {faq.question}
-            </motion.h3>
-            <motion.p 
-              className={`${darkMode ? 'text-gray-300' : 'text-gray-700'}`}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: index * 0.1 + 0.4 }}
-            >
-              {faq.answer}
-            </motion.p>
+              <h3 className="text-xl font-bold">{faq.question}</h3>
+              <FaChevronDown
+                className={`transform transition-transform duration-200 ${
+                  expandedIndex === index ? 'rotate-180' : ''
+                }`}
+              />
+            </button>
+            <AnimatePresence>
+              {expandedIndex === index && (
+                <motion.p
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className={`mt-4 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}
+                >
+                  {faq.answer}
+                </motion.p>
+              )}
+            </AnimatePresence>
           </motion.div>
         ))}
       </div>
@@ -1159,21 +1112,12 @@ function FAQPage({ darkMode }: { darkMode: boolean }) {
 }
 
 function AnimatedSection({ darkMode }: { darkMode: boolean }) {
-  const [currentIndex, setCurrentIndex] = useState(0)
   const items = [
     { title: "Innovative Solutions", description: "Bringing cutting-edge technology to real estate" },
     { title: "Data-Driven Decisions", description: "Leveraging analytics for smarter investments" },
     { title: "Digital Transformation", description: "Revolutionizing the real estate industry" },
     { title: "Client-Centric Approach", description: "Tailored strategies for your success" }
   ]
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length)
-    }, 5000)
-
-    return () => clearInterval(interval)
-  }, [items.length])
 
   return (
     <motion.div
@@ -1186,23 +1130,101 @@ function AnimatedSection({ darkMode }: { darkMode: boolean }) {
       <h2 className="text-4xl font-bold font-poppins mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
         Continuous Innovation
       </h2>
-      <div className="relative h-64">
+      <div className="relative">
         {items.map((item, index) => (
           <motion.div
             key={index}
-            className={`absolute w-full ${darkMode ? 'bg-gray-800' : 'bg-gray-200'} p-8 rounded-lg`}
-            initial={{ opacity: 0, y: 50 }}
-            animate={{
-              opacity: index === currentIndex ? 1 : 0,
-              y: index === currentIndex ? 0 : 50,
-            }}
-            transition={{ duration: 0.5 }}
+            className={`mb-8 p-6 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-200'}`}
+            initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.2 }}
           >
-            <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
+            <h3 className="text-2xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">{item.title}</h3>
             <p className={`text-lg ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>{item.description}</p>
           </motion.div>
         ))}
       </div>
     </motion.div>
+  )
+}
+
+function Footer({ darkMode }: { darkMode: boolean }) {
+  return (
+    <footer className={`${darkMode ? 'bg-gray-800' : 'bg-gray-200'} py-12 transition-colors duration-300`}>
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h3 className="text-2xl font-bold mb-6">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+                Omar Hassan
+              </span>
+            </h3>
+            <p className={`${darkMode ? 'text-gray-400' : 'text-gray-600'} mb-6`}>
+              Empowering businesses with innovative digital strategies and cutting-edge real estate solutions.
+            </p>
+            <div className="flex space-x-4">
+              <SocialIcon Icon={FaFacebookF} url="https://facebook.com/Omar.Tnzxo" darkMode={darkMode} />
+              <SocialIcon Icon={FaInstagram} url="https://Instagram.com/Omar.Tnzxo" darkMode={darkMode} />
+              <SocialIcon Icon={FaLinkedin} url="https://LinkedIn.com/in/Omar-Tnzxo" darkMode={darkMode} />
+              <SocialIcon Icon={FaTiktok} url="https://tiktok.com/@omar.tnzxo" darkMode={darkMode} />
+              <SocialIcon Icon={FaTelegram} url="https://t.me/Omar_Tnzxo" darkMode={darkMode} />
+              <SocialIcon Icon={FaTwitter} url="https://x.com/OmarTnzx o" darkMode={darkMode} />
+              <SocialIcon Icon={FaGithub} url="https://github.com/Omar-Tnzxo" darkMode={darkMode} />
+              <SocialIcon Icon={FaWhatsapp} url="https://wa.me/+201029752972" darkMode={darkMode} />
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <h3 className="text-xl font-bold mb-6">Quick Links</h3>
+            <div className="grid grid-cols-2 gap-4">
+              {navItems.map((item) => (
+                <motion.a 
+                  key={item}
+                  href={`#${item.toLowerCase()}`}
+                  className={`cursor-pointer ${darkMode ? 'text-gray-400 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'} transition-colors`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {item}
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <h3 className="text-xl font-bold mb-6">Contact Information</h3>
+            <ul className={`space-y-4 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+              <motion.li className="flex items-center" whileHover={{ x: 5 }}>
+                <FaEnvelope className="mr-4 text-blue-400" /> omar-agha@engineer.com
+              </motion.li>
+              <motion.li className="flex items-center" whileHover={{ x: 5 }}>
+                <FaPhone className="mr-4 text-green-400" /> +201029752972
+              </motion.li>
+              <motion.li className="flex items-center" whileHover={{ x: 5 }}>
+                <FaMapMarkerAlt className="mr-4 text-red-400" /> Egypt, Giza, 6 October City
+              </motion.li>
+            </ul>
+          </motion.div>
+        </div>
+        <motion.div 
+          className="mt-12 pt-8 border-t border-gray-700 text-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+        >
+          <p className={`${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>© 2024 Omar Hassan. All rights reserved.</p>
+        </motion.div>
+      </div>
+    </footer>
   )
 }
