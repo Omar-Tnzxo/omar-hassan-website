@@ -7,7 +7,6 @@ import { SiMicrosoft, SiTelegram } from 'react-icons/si'
 import { MdRealEstateAgent, MdComputer, MdBusiness, MdAnalytics, MdTrendingUp, MdPeople, MdSearch } from 'react-icons/md'
 import Head from 'next/head'
 import Image from 'next/image'
-import { useInView } from 'react-intersection-observer'
 
 const navItems = ['Home', 'About', 'Experience', 'Skills', 'Services', 'Portfolio', 'Testimonials', 'Blog', 'Contact', 'FAQ']
 
@@ -270,13 +269,14 @@ export function EnhancedPersonalWebsite() {
         <FaWhatsapp size={24} />
       </motion.a>
       <nav className="fixed right-4 top-1/2 transform -translate-y-1/2 z-50">
-        <ul  className="space-y-4">
+        <ul className="space-y-4">
           {navItems.map((item) => (
             <motion.li key={item}
-              whileHover={{ scale: 1.1  }}
+              whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
               <a
+                
                 href={`#${item.toLowerCase()}`}
                 className={`w-3 h-3 rounded-full block transition-all duration-300 ${
                   activePage === item ? 'bg-gradient-to-r from-blue-400 to-purple-600 w-6' : `${darkMode ? 'bg-gray-600' : 'bg-gray-400'}`
@@ -763,37 +763,37 @@ function PortfolioPage({ darkMode }: { darkMode: boolean }) {
 function TestimonialsPage({ darkMode }: { darkMode: boolean }) {
   const testimonials = [
     {
-      name: "Sarah Johnson",
+      name: "Ahmed Al-Mansour",
       role: "CEO, TechStart Inc.",
       content: "Omar's digital marketing strategies transformed our online presence. His innovative approach and deep understanding of the tech industry helped us reach our target audience effectively.",
       image: "https://i.ibb.co/Ld6JYXJ/sarah-johnson.jpg"
     },
     {
-      name: "Michael Chen",
+      name: "Layla El-Masri",
       role: "Real Estate Investor",
       content: "Working with Omar was a game-changer for my real estate investments. His market insights and data-driven approach helped me make informed decisions and maximize my returns.",
       image: "https://i.ibb.co/Ld6JYXJ/michael-chen.jpg"
     },
     {
-      name: "Emily Rodriguez",
+      name: "Fatima Al-Sayed",
       role: "Marketing Director, GreenHome Properties",
       content: "Omar's expertise in both real estate and digital marketing was exactly what we needed. He developed a comprehensive strategy that significantly increased our property inquiries and sales.",
       image: "https://i.ibb.co/Ld6JYXJ/emily-rodriguez.jpg"
     },
     {
-      name: "David Thompson",
+      name: "Karim Nour",
       role: "Founder, AI Solutions Ltd.",
       content: "Omar's ability to blend AI technology with real estate applications is truly impressive. His AI-powered property valuation tool has become an integral part of our business operations.",
       image: "https://i.ibb.co/Ld6JYXJ/david-thompson.jpg"
     },
     {
-      name: "Lisa Patel",
+      name: "Nadia Hassan",
       role: "Social Media Influencer",
       content: "I've worked with many digital marketers, but Omar stands out. His creative content strategies and deep understanding of social media algorithms helped me grow my following exponentially.",
       image: "https://i.ibb.co/Ld6JYXJ/lisa-patel.jpg"
     },
     {
-      name: "Alex Novak",
+      name: "Youssef El-Sherif",
       role: "CTO, PropTech Innovations",
       content: "Omar's technical skills are top-notch. He developed a custom web application for our company that streamlined our operations and improved our customer experience significantly.",
       image: "https://i.ibb.co/Ld6JYXJ/alex-novak.jpg"
@@ -963,7 +963,7 @@ function ContactPage({ darkMode }: { darkMode: boolean }) {
       await new Promise(resolve => setTimeout(resolve, 2000))
       setSubmitStatus('success')
       setFormData({ name: '', email: '', message: '' })
-    } catch (error) {
+    } catch {
       setSubmitStatus('error')
     }
     setIsSubmitting(false)
@@ -986,7 +986,7 @@ function ContactPage({ darkMode }: { darkMode: boolean }) {
         >
           <h3 className="text-2xl font-bold mb-4">Get in Touch</h3>
           <p className={`mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-            I'm always open to new opportunities and collaborations. Whether you have a question about real estate, digital marketing, or just want to say hello, I'd love to hear from you!
+            I&apos;m always open to new opportunities and collaborations. Whether you have a question about real estate, digital marketing, or just want to say hello, I&apos;d love to hear from you!
           </p>
           <div className={`space-y-4 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
             <div className="flex items-center">
@@ -1096,24 +1096,24 @@ function ContactPage({ darkMode }: { darkMode: boolean }) {
 function FAQPage({ darkMode }: { darkMode: boolean }) {
   const faqs = [
     {
-      question: "ما هي خدمات الاستشارات العقارية التي تقدمها؟",
-      answer: "أقدم مجموعة واسعة من خدمات الاستشارات العقارية، بما في ذلك تحليل السوق، تقييم الممتلكات، استراتيجيات الاستثمار، وتحسين المحفظة العقارية."
+      question: "What real estate consulting services do you offer?",
+      answer: "I offer a wide range of real estate consulting services, including market analysis, property valuation, investment strategies, and portfolio optimization."
     },
     {
-      question: "كيف يمكن للتسويق الرقمي أن يساعد في مجال العقارات؟",
-      answer: "التسويق الرقمي يمكن أن يزيد من وصول العقارات إلى جمهور أوسع، يحسن جودة العملاء المحتملين، ويسرع من عملية البيع من خلال استراتيجيات مثل التسويق عبر وسائل التواصل الاجتماعي، تحسين محركات البحث، والإعلانات المستهدفة."
+      question: "How can digital marketing help in the real estate sector?",
+      answer: "Digital marketing can significantly increase property visibility, improve lead quality, and accelerate sales through strategies like social media marketing, SEO, and targeted advertising."
     },
     {
-      question: "ما هي خبرتك في مجال التكنولوجيا العقارية؟",
-      answer: "لدي خبرة واسعة في تطبيق التكنولوجيا في مجال العقارات، بما في ذلك تطوير أدوات التقييم المدعومة بالذكاء الاصطناعي، منصات الجولات الافتراضية، وأنظمة إدارة علاقات العملاء المخصصة للعقارات."
+      question: "What's your experience with real estate technology?",
+      answer: "I have extensive experience applying technology in real estate, including developing AI-powered valuation tools, virtual tour platforms, and custom CRM systems for real estate agencies."
     },
     {
-      question: "كيف يمكنني البدء في الاستثمار العقاري؟",
-      answer: "للبدء في الاستثمار العقاري، أنصح بتعليم نفسك أولاً حول السوق المحلي، وتحديد أهدافك الاستثمارية، وبناء شبكة من المهنيين العقاريين. يمكنني مساعدتك في وضع استراتيجية استثمار مخصصة تناسب أهدافك وميزانيتك."
+      question: "How can I start investing in real estate?",
+      answer: "To start investing in real estate, I recommend educating yourself about the local market, defining your investment goals, and building a network of real estate professionals. I can help you develop a customized investment strategy that aligns with your goals and budget."
     },
     {
-      question: "ما هي أحدث اتجاهات التسويق الرقمي في مجال العقارات؟",
-      answer: "تشمل أحدث اتجاهات التسويق الرقمي في العقارات استخدام الواقع المعزز والافتراضي للجولات العقارية، التسويق بالفيديو، استخدام الذكاء الاصطناعي في تخصيص تجربة العملاء، والتسويق عبر المؤثرين في مجال العقارات."
+      question: "What are the latest digital marketing trends in real estate?",
+      answer: "The latest digital marketing trends in real estate include the use of AR and VR for property tours, video marketing, AI-powered personalization of customer experiences, and influencer marketing in the real estate niche."
     }
   ]
 
@@ -1125,7 +1125,7 @@ function FAQPage({ darkMode }: { darkMode: boolean }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <h2 className="text-4xl font-bold font-poppins mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">الأسئلة الشائعة</h2>
+      <h2 className="text-4xl font-bold font-poppins mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Frequently Asked Questions</h2>
       <div className="space-y-6">
         {faqs.map((faq, index) => (
           <motion.div
@@ -1135,8 +1135,22 @@ function FAQPage({ darkMode }: { darkMode: boolean }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
           >
-            <h3 className="text-xl font-bold mb-2">{faq.question}</h3>
-            <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>{faq.answer}</p>
+            <motion.h3 
+              className="text-xl font-bold mb-2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: index * 0.1 + 0.2 }}
+            >
+              {faq.question}
+            </motion.h3>
+            <motion.p 
+              className={`${darkMode ? 'text-gray-300' : 'text-gray-700'}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: index * 0.1 + 0.4 }}
+            >
+              {faq.answer}
+            </motion.p>
           </motion.div>
         ))}
       </div>
