@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion'
-import { FaLinkedin, FaTwitter, FaInstagram, FaTelegram, FaFacebookF, FaEnvelope, FaPhone, FaMapMarkerAlt, FaSun, FaMoon, FaArrowUp, FaGithub, FaFileDownload, FaWhatsapp, FaTiktok, FaChevronDown } from 'react-icons/fa'
+import { FaLinkedin, FaTwitter, FaInstagram, FaTelegram, FaFacebookF, FaEnvelope, FaPhone, FaMapMarkerAlt, FaSun, FaMoon, FaArrowUp, FaGithub, FaFileDownload, FaWhatsapp, FaTiktok, FaChevronDown, FaUser } from 'react-icons/fa'
 import { SiMicrosoft, SiTelegram } from 'react-icons/si'
-import { MdRealEstateAgent, MdComputer, MdBusiness, MdAnalytics, MdTrendingUp, MdPeople, MdSearch } from 'react-icons/md'
+import { MdRealEstateAgent, MdComputer, MdBusiness, MdAnalytics, MdTrendingUp, MdPeople, MdSearch, MdEmail, MdMessage } from 'react-icons/md'
 import Head from 'next/head'
 import Image from 'next/image'
 
@@ -17,7 +17,7 @@ const neonColors = {
   quaternary: '#ff8000',
 }
 
-export default function EnhancedNeonPersonalWebsiteComponent() {
+export default function EnhancedPersonalWebsite() {
   const [activePage, setActivePage] = useState('Home')
   const [darkMode, setDarkMode] = useState(true)
   const [showScrollTop, setShowScrollTop] = useState(false)
@@ -66,7 +66,16 @@ export default function EnhancedNeonPersonalWebsiteComponent() {
     <div className={`min-h-screen ${darkMode ? 'bg-gray-900 text-gray-100' : 'bg-gray-100 text-gray-900'} font-sans transition-colors duration-300`}>
       <Head>
         <title>Omar Hassan - Real Estate Consultant & Digital Marketing Expert</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/assets/favicon.ico" />
+        <meta name="description" content="Omar Hassan - Expert in real estate consultation and digital marketing strategies. Empowering businesses with innovative solutions and data-driven insights." />
+        <meta name="keywords" content="Omar Hassan, Real Estate Consultant, Digital Marketing Expert, Property Investment, SEO, Social Media Marketing" />
+        <meta name="author" content="Omar Hassan" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content="Omar Hassan - Real Estate Consultant & Digital Marketing Expert" />
+        <meta property="og:description" content="Empowering businesses with innovative digital strategies and cutting-edge real estate solutions." />
+        <meta property="og:image" content="https://i.ibb.co/8BhdGRT/Picsart-23-08-31-06-07-05-897.jpg" />
+        <meta property="og:url" content="https://www.omarhassan.com" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 transform origin-left z-50"
@@ -273,6 +282,7 @@ function HomePage({ darkMode }: { darkMode: boolean }) {
             height={256}
             className="rounded-full w-full h-full object-cover z-10 relative"
           />
+          
           <motion.div
             className="absolute top-0 left-0 w-full h-full rounded-full bg-gradient-to-r from-blue-400 to-purple-600"
             animate={{
@@ -281,7 +291,22 @@ function HomePage({ darkMode }: { darkMode: boolean }) {
               borderRadius: ["50%", "25%", "50%"]
             }}
             transition={{
-              duration: 5,
+              duration: 10,
+              ease: "easeInOut",
+              times: [0, 0.5, 1],
+              repeat: Infinity,
+              repeatDelay: 1
+            }}
+          />
+          <motion.div
+            className="absolute top-0 left-0 w-full h-full rounded-full bg-gradient-to-r from-purple-400 to-pink-600 opacity-50"
+            animate={{
+              scale: [1.2, 1, 1.2],
+              rotate: [360, 0, 360],
+              borderRadius: ["25%", "50%", "25%"]
+            }}
+            transition={{
+              duration: 15,
               ease: "easeInOut",
               times: [0, 0.5, 1],
               repeat: Infinity,
@@ -295,10 +320,10 @@ function HomePage({ darkMode }: { darkMode: boolean }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
-          I&apos;m Omar Hassan
+          Omar Hassan
         </motion.h2>
         <motion.h3 
-          className={`text-3xl font-poppins mb-6 ${darkMode ?   'text-gray-300' : 'text-gray-700'}`}
+          className={`text-3xl font-poppins mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.5 }}
@@ -311,7 +336,7 @@ function HomePage({ darkMode }: { darkMode: boolean }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.5 }}
         >
-          Empowering businesses with innovative digital strategies and cutting-edge real estate solutions. With 2 years of experience since 2023, I blend technology and marketing expertise to drive growth and success.
+          Empowering businesses with innovative digital strategies and cutting-edge real estate solutions. With 2 years of experience since 2023, I blend technology and marketing expertise to drive growth and success in the ever-evolving digital landscape.
         </motion.p>
         <motion.div 
           className="flex justify-center space-x-4"
@@ -382,14 +407,17 @@ function AboutPage({ darkMode }: { darkMode: boolean }) {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
+          <h3 className="text-3xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+            Omar Hassan
+          </h3>
           <p className={`text-lg mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-            I&apos;m Omar Hassan, a passionate real estate consultant and digital marketing expert with 2 years of experience since 2023. My journey began when I recognized the untapped potential of digital strategies in the real estate sector.
+            As a passionate real estate consultant and digital marketing expert with 2 years of experience since 2023, I've dedicated my career to bridging the gap between traditional real estate practices and cutting-edge digital strategies.
           </p>
           <p className={`text-lg mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-            Currently, I&apos;m pursuing a Bachelor&apos;s degree in Management Information Systems at Pharaohs Higher Institute, which I started in August 2022. This academic pursuit complements my professional experience, allowing me to bring cutting-edge knowledge to my work.
+            Currently pursuing a Bachelor's degree in Management Information Systems at Pharaohs Higher Institute (started August 2022), I'm constantly integrating academic insights with real-world applications, ensuring my clients benefit from the latest advancements in technology and business management.
           </p>
           <p className={`text-lg mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-            With a unique blend of technological expertise and marketing acumen, I&apos;ve helped numerous businesses thrive in the digital age while excelling in the real estate sector. My approach combines data-driven insights with creative problem-solving to deliver tailored solutions that drive growth and maximize ROI.
+            My unique blend of technological expertise and marketing acumen has enabled me to help numerous businesses thrive in the digital age while excelling in the real estate sector. I pride myself on delivering data-driven insights and creative solutions that drive growth and maximize ROI for my clients.
           </p>
           <AnimatePresence>
             {isExpanded && (
@@ -399,16 +427,17 @@ function AboutPage({ darkMode }: { darkMode: boolean }) {
                 exit={{ opacity: 0, height: 0 }}
               >
                 <p className={`text-lg mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                  Throughout my career, I&apos;ve successfully:
+                  Throughout my career, I've achieved significant milestones, including:
                 </p>
                 <ul className={`list-disc list-inside mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                  <li>Increased online lead generation by 200% for a major real estate firm</li>
-                  <li>Developed and implemented AI-driven property valuation tools</li>
-                  <li>Created comprehensive digital marketing strategies for over 50 clients</li>
-                  <li>Spoken at industry conferences on the intersection of tech and real estate</li>
+                  <li>Boosting online lead generation by 200% for a major real estate firm</li>
+                  <li>Developing and implementing AI-driven property valuation tools</li>
+                  <li>Creating comprehensive digital marketing strategies for over 50 clients</li>
+                  <li>Speaking at industry conferences on the intersection of technology and real estate</li>
+                  <li>Implementing SEO strategies that increased organic traffic by 150% for multiple clients</li>
                 </ul>
                 <p className={`text-lg mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                  My goal is to continue pushing the boundaries of what&apos;s possible in real estate and digital marketing, helping businesses and individuals achieve unprecedented success in an ever-evolving digital landscape.
+                  My goal is to continue pushing the boundaries of what's possible in real estate and digital marketing, helping businesses and individuals achieve unprecedented success in an ever-evolving digital landscape. I'm committed to staying at the forefront of industry trends and technological advancements to provide my clients with the most innovative and effective solutions.
                 </p>
               </motion.div>
             )}
@@ -447,9 +476,9 @@ function ExperiencePage({ darkMode }: { darkMode: boolean }) {
       achievements: [
         "Developed and implemented organic marketing strategies that increased property inquiries by 150%",
         "Provided expert real estate consultation to clients, resulting in a 30% increase in successful property transactions",
-        "Created and optimized content for social media and the company website, improving online visibility and engagement",
-        "Conducted market research and analysis to identify emerging trends and opportunities in the real estate sector",
-        "Collaborated with the sales team to develop targeted marketing campaigns for high-value properties"
+        "Created and optimized content for social media and the company website, improving online visibility and engagement by 200%",
+        "Conducted comprehensive market research and analysis to identify emerging trends and opportunities in the real estate sector",
+        "Collaborated with the sales team to develop targeted marketing campaigns for high-value properties, resulting in a 40% increase in luxury property sales"
       ]
     }
   ]
@@ -462,7 +491,7 @@ function ExperiencePage({ darkMode }: { darkMode: boolean }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <h2 className="text-4xl font-bold font-poppins mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Work Experience</h2>
+      <h2 className="text-4xl font-bold font-poppins mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Professional Experience</h2>
       {experiences.map((exp, index) => (
         <motion.div
           key={index}
@@ -488,17 +517,17 @@ function ExperiencePage({ darkMode }: { darkMode: boolean }) {
 
 function SkillsPage({ darkMode }: { darkMode: boolean }) {
   const skills = [
-    { name: "Property Consultant", level: 88, icon: MdRealEstateAgent, color: neonColors.tertiary },
-    { name: "Web Design", level: 85, icon: MdComputer, color: neonColors.primary },
-    { name: "Digital Marketing", level: 90, icon: MdTrendingUp, color: neonColors.secondary },
-    { name: "Organic Marketing", level: 92, icon: MdTrendingUp, color: neonColors.quaternary },
-    { name: "Social Media Management", level: 87, icon: MdPeople, color: neonColors.primary },
-    { name: "Real Estate Copywriting", level: 85, icon: MdBusiness, color: neonColors.secondary },
-    { name: "Telegram Bots Development", level: 80, icon: SiTelegram, color: neonColors.tertiary },
-    { name: "Data Extraction", level: 82, icon: MdAnalytics,  color: neonColors.quaternary },
-    { name: "Tech Savvy", level: 95, icon: MdComputer, color: neonColors.primary },
-    { name: "Microsoft Excel", level: 88, icon: SiMicrosoft, color: neonColors.secondary },
-    { name: "Research Skills", level: 90, icon: MdSearch, color: neonColors.tertiary },
+    { name: "Real Estate Consultation", level: 92, icon: MdRealEstateAgent, color: neonColors.tertiary },
+    { name: "Digital Marketing Strategy", level: 95, icon: MdTrendingUp, color: neonColors.primary },
+    { name: "SEO Optimization", level: 90, icon: MdSearch, color: neonColors.secondary },
+    { name: "Social Media Management", level: 88, icon: MdPeople, color: neonColors.quaternary },
+    { name: "Content Creation", level: 87, icon: MdComputer, color: neonColors.primary },
+    { name: "Data Analysis", level: 85, icon: MdAnalytics, color: neonColors.secondary },
+    { name: "Web Development", level: 80, icon: MdComputer, color: neonColors.tertiary },
+    { name: "Market Research", level: 93, icon: MdSearch,  color: neonColors.quaternary },
+    { name: "CRM Systems", level: 85, icon: MdPeople, color: neonColors.primary },
+    { name: "Email Marketing", level: 88, icon: MdEmail, color: neonColors.secondary },
+    { name: "Project Management", level: 90, icon: MdBusiness, color: neonColors.tertiary },
   ]
 
   return (
@@ -509,7 +538,7 @@ function SkillsPage({ darkMode }: { darkMode: boolean }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <h2 className="text-4xl font-bold font-poppins mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">My Skills</h2>
+      <h2 className="text-4xl font-bold font-poppins mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">My Expertise</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {skills.map((skill, index) => (
           <motion.div
@@ -534,8 +563,8 @@ function SkillsPage({ darkMode }: { darkMode: boolean }) {
                 />
               </div>
               <div className="flex justify-between text-sm">
-                <span>Beginner</span>
-                <span>Advanced</span>
+                <span>Proficient</span>
+                <span>Expert</span>
               </div>
             </div>
           </motion.div>
@@ -548,38 +577,38 @@ function SkillsPage({ darkMode }: { darkMode: boolean }) {
 function ServicesPage({ darkMode }: { darkMode: boolean }) {
   const services = [
     {
-      title: "Real Estate Consultation",
-      description: "Expert advice on property investments, market trends, and strategic decision-making in the real estate sector.",
+      title: "Strategic Real Estate Consultation",
+      description: "Providing expert advice on property investments, market trends, and strategic decision-making to maximize your real estate portfolio's value and potential.",
       icon: MdRealEstateAgent,
       color: neonColors.primary
     },
     {
-      title: "Digital Marketing Strategy",
-      description: "Comprehensive digital marketing plans tailored to your business needs, focusing on ROI and brand growth.",
+      title: "Comprehensive Digital Marketing",
+      description: "Crafting and implementing data-driven digital marketing strategies tailored to your business needs, focusing on ROI and sustainable brand growth in the digital realm.",
       icon: MdTrendingUp,
       color: neonColors.secondary
     },
     {
-      title: "Social Media Management",
-      description: "Engaging content creation and community management across various social media platforms to boost your online presence.",
+      title: "Advanced Social Media Management",
+      description: "Creating engaging content and managing communities across various social media platforms to boost your online presence and foster meaningful connections with your audience.",
       icon: MdPeople,
       color: neonColors.tertiary
     },
     {
-      title: "Web Design & Development",
-      description: "Creating responsive, user-friendly websites that convert visitors into customers and enhance your digital footprint.",
+      title: "Innovative Web Design & Development",
+      description: "Designing and developing responsive, user-friendly websites that not only look great but also convert visitors into customers, enhancing your digital footprint effectively.",
       icon: MdComputer,
       color: neonColors.quaternary
     },
     {
-      title: "SEO Optimization",
-      description: "Improving your website's search engine rankings to drive organic traffic and increase visibility.",
+      title: "SEO Optimization & Content Strategy",
+      description: "Improving your website's search engine rankings through advanced SEO techniques and creating compelling content strategies to drive organic traffic and increase visibility.",
       icon: MdSearch,
       color: neonColors.primary
     },
     {
-      title: "Data Analysis & Reporting",
-      description: "In-depth analysis of marketing and real estate data to provide actionable insights and performance reports.",
+      title: "Data Analysis & Performance Reporting",
+      description: "Conducting in-depth analysis of marketing and real estate data to provide actionable insights and comprehensive performance reports for informed decision-making.",
       icon: MdAnalytics,
       color: neonColors.secondary
     }
@@ -593,7 +622,7 @@ function ServicesPage({ darkMode }: { darkMode: boolean }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <h2 className="text-4xl font-bold font-poppins mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">My Services</h2>
+      <h2 className="text-4xl font-bold font-poppins mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Services I Offer</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service, index) => (
           <motion.div
@@ -618,40 +647,40 @@ function ServicesPage({ darkMode }: { darkMode: boolean }) {
 function PortfolioPage({ darkMode }: { darkMode: boolean }) {
   const projects = [
     {
-      title: "Luxury Real Estate Website",
-      description: "Designed and developed a high-end real estate website showcasing premium properties with virtual tours and advanced search functionality.",
+      title: "Luxury Real Estate Platform",
+      description: "Designed and developed a high-end real estate website showcasing premium properties with virtual tours, advanced search functionality, and AI-powered recommendations.",
       image: "https://i.ibb.co/Qp1SXBk/real-estate-website.jpg",
-      tags: ["Web Development", "Real Estate", "UI/UX Design"]
+      tags: ["Web Development", "Real Estate", "UI/UX Design", "AI Integration"]
     },
     {
-      title: "Social Media Campaign for Property Developer",
-      description: "Created and managed a multi-platform social media campaign that increased engagement by 200% and led to a 50% increase in property inquiries.",
+      title: "Multi-Platform Social Media Campaign",
+      description: "Created and managed a comprehensive social media campaign across multiple platforms, increasing engagement by 200% and leading to a 50% boost in property inquiries.",
       image: "https://i.ibb.co/C6ZGJgk/social-media-campaign.jpg",
-      tags: ["Digital Marketing", "Social Media", "Real Estate"]
+      tags: ["Digital Marketing", "Social Media", "Content Strategy", "Analytics"]
     },
     {
-      title: "Real Estate Market Analysis Dashboard",
-      description: "Developed an interactive dashboard for real-time market analysis, helping investors make data-driven decisions in the property market.",
+      title: "Real-Time Market Analysis Dashboard",
+      description: "Developed an interactive dashboard for real-time market analysis, empowering investors with data-driven insights for informed decision-making in the property market.",
       image: "https://i.ibb.co/Jt8Jq3Q/market-analysis-dashboard.jpg",
-      tags: ["Data Analysis", "Web Development", "Real Estate"]
+      tags: ["Data Analysis", "Web Development", "Real Estate", "Business Intelligence"]
     },
     {
       title: "AI-Powered Property Valuation Tool",
-      description: "Built an AI-driven tool that provides accurate property valuations based on various factors, improving pricing strategies for real estate agencies.",
+      description: "Built an advanced AI-driven tool that provides accurate property valuations based on multiple factors, significantly improving pricing strategies for real estate agencies.",
       image: "https://i.ibb.co/Qf8Gx9P/ai-valuation-tool.jpg",
-      tags: ["AI", "Web Development", "Real Estate"]
+      tags: ["AI", "Machine Learning", "Real Estate", "Data Science"]
     },
     {
-      title: "Email Marketing Automation for Real Estate",
-      description: "Implemented an automated email marketing system that nurtures leads and provides personalized property recommendations, resulting in a 30% increase in conversions.",
+      title: "Automated Email Marketing System",
+      description: "Implemented a sophisticated automated email marketing system that nurtures leads and provides personalized property recommendations, resulting in a 30% increase in conversions.",
       image: "https://i.ibb.co/Lx6zqxc/email-marketing-automation.jpg",
-      tags: ["Digital Marketing", "Automation", "Real Estate"]
+      tags: ["Digital Marketing", "Automation", "CRM", "Lead Nurturing"]
     },
     {
-      title: "Virtual Reality Property Tours Platform",
-      description: "Developed a VR platform allowing potential buyers to take immersive virtual tours of properties, increasing engagement and reducing physical viewings.",
+      title: "Immersive VR Property Tours Platform",
+      description: "Developed a cutting-edge VR platform allowing potential buyers to take immersive virtual tours of properties, increasing engagement and reducing physical viewings by 40%.",
       image: "https://i.ibb.co/Ry0K098/vr-property-tours.jpg",
-      tags: ["VR", "Web Development", "Real Estate"]
+      tags: ["VR", "Web Development", "Real Estate", "Innovation"]
     }
   ]
 
@@ -663,7 +692,7 @@ function PortfolioPage({ darkMode }: { darkMode: boolean }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <h2 className="text-4xl font-bold font-poppins mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">My Portfolio</h2>
+      <h2 className="text-4xl font-bold font-poppins mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Featured Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
           <motion.div
@@ -708,37 +737,37 @@ function TestimonialsPage({ darkMode }: { darkMode: boolean }) {
     {
       name: "Ahmed Al-Mansour",
       role: "CEO, TechStart Inc.",
-      content: "Omar's digital marketing strategies transformed our online presence. His innovative approach and deep understanding of the tech industry helped us reach our target audience effectively.",
+      content: "Omar's innovative digital marketing strategies transformed our online presence. His deep understanding of the tech industry and data-driven approach helped us reach our target audience more effectively than ever before.",
       image: "https://i.ibb.co/Ld6JYXJ/sarah-johnson.jpg"
     },
     {
       name: "Layla El-Masri",
       role: "Real Estate Investor",
-      content: "Working with Omar was a game-changer for my real estate investments. His market insights and data-driven approach helped me make informed decisions and maximize my returns.",
+      content: "Working with Omar was a game-changer for my real estate investments. His market insights and data-driven approach helped me make informed decisions, resulting in a significant increase in my portfolio's value.",
       image: "https://i.ibb.co/Ld6JYXJ/michael-chen.jpg"
     },
     {
       name: "Fatima Al-Sayed",
       role: "Marketing Director, GreenHome Properties",
-      content: "Omar's expertise in both real estate and digital marketing was exactly what we needed. He developed a comprehensive strategy that significantly increased our property inquiries and sales.",
+      content: "Omar's expertise in both real estate and digital marketing was exactly what we needed. He developed a comprehensive strategy that significantly increased our property inquiries and sales, setting new records for our company.",
       image: "https://i.ibb.co/Ld6JYXJ/emily-rodriguez.jpg"
     },
     {
       name: "Karim Nour",
       role: "Founder, AI Solutions Ltd.",
-      content: "Omar's ability to blend AI technology with real estate applications is truly impressive. His AI-powered property valuation tool has become an integral part of our business operations.",
+      content: "Omar's ability to blend AI technology with real estate applications is truly impressive. His AI-powered property valuation tool has become an integral part of our business operations, improving our accuracy and efficiency.",
       image: "https://i.ibb.co/Ld6JYXJ/david-thompson.jpg"
     },
     {
       name: "Nadia Hassan",
       role: "Social Media Influencer",
-      content: "I've worked with many digital marketers, but Omar stands out. His creative content strategies and deep understanding of social media algorithms helped me grow my following exponentially.",
+      content: "I've worked with many digital marketers, but Omar stands out. His creative content strategies and deep understanding of social media algorithms helped me grow my following exponentially and increase my engagement rates.",
       image: "https://i.ibb.co/Ld6JYXJ/lisa-patel.jpg"
     },
     {
       name: "Youssef El-Sherif",
       role: "CTO, PropTech Innovations",
-      content: "Omar's technical skills are top-notch. He developed a custom web application for our company that streamlined our operations and improved our customer experience significantly.",
+      content: "Omar's technical skills are top-notch. He developed a custom web application for our company that streamlined our operations and significantly improved our customer experience. His work has been instrumental in our growth.",
       image: "https://i.ibb.co/Ld6JYXJ/alex-novak.jpg"
     }
   ]
@@ -751,7 +780,7 @@ function TestimonialsPage({ darkMode }: { darkMode: boolean }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <h2 className="text-4xl font-bold font-poppins mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Testimonials</h2>
+      <h2 className="text-4xl font-bold font-poppins mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Client Testimonials</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {testimonials.map((testimonial, index) => (
           <motion.div
@@ -788,42 +817,42 @@ function BlogPage({ darkMode }: { darkMode: boolean }) {
   const blogPosts = [
     {
       title: "The Future of Real Estate: AI and Virtual Reality",
-      excerpt: "Explore how artificial intelligence and virtual reality are revolutionizing the real estate industry, from property valuations to virtual tours.",
+      excerpt: "Explore how artificial intelligence and virtual reality are revolutionizing the real estate industry, from property valuations to immersive virtual tours.",
       date: "May 15, 2024",
       image: "https://i.ibb.co/Qf8Gx9P/ai-valuation-tool.jpg",
       category: "Technology"
     },
     {
-      title: "5 Digital Marketing Strategies Every Real Estate Agent Needs",
-      excerpt: "Discover the essential digital marketing techniques that can help real estate agents stand out in a competitive market and attract more clients.",
+      title: "5 Advanced Digital Marketing Strategies for Real Estate Professionals",
+      excerpt: "Discover cutting-edge digital marketing techniques that can help real estate agents stand out in a competitive market and attract high-value clients.",
       date: "April 28, 2024",
       image: "https://i.ibb.co/C6ZGJgk/social-media-campaign.jpg",
       category: "Marketing"
     },
     {
       title: "Sustainable Living: The Rise of Eco-Friendly Properties",
-      excerpt: "Learn about the growing trend of sustainable properties and how it's shaping the future of real estate development and investment.",
+      excerpt: "Learn about the growing trend of sustainable properties and how it's shaping the future of real estate development, investment, and consumer preferences.",
       date: "April 10, 2024",
       image: "https://i.ibb.co/Qp1SXBk/real-estate-website.jpg",
       category: "Real Estate Trends"
     },
     {
-      title: "Mastering SEO for Real Estate Websites",
-      excerpt: "A comprehensive guide to optimizing your real estate website for search engines and driving organic traffic to your listings.",
+      title: "Mastering SEO for Real Estate Websites: A Comprehensive Guide",
+      excerpt: "An in-depth guide to optimizing your real estate website for search engines, driving organic traffic, and outranking competitors in local search results.",
       date: "March 22, 2024",
       image: "https://i.ibb.co/Lx6zqxc/email-marketing-automation.jpg",
       category: "SEO"
     },
     {
-      title: "The Power of Data Analytics in Real Estate Investment",
-      excerpt: "Explore how big data and analytics are transforming real estate investment strategies and decision-making processes.",
+      title: "Leveraging Big Data Analytics in Real Estate Investment",
+      excerpt: "Explore how big data and advanced analytics are transforming real estate investment strategies, risk assessment, and decision-making processes.",
       date: "March 5, 2024",
       image: "https://i.ibb.co/Jt8Jq3Q/market-analysis-dashboard.jpg",
       category: "Investment"
     },
     {
-      title: "Creating Engaging Content for Real Estate Social Media",
-      excerpt: "Tips and tricks for creating compelling social media content that attracts potential buyers and sellers in the real estate market.",
+      title: "Creating Viral Content for Real Estate Social Media Marketing",
+      excerpt: "Learn strategies and techniques for creating compelling, shareable social media content that attracts potential buyers and sellers in the competitive real estate market.",
       date: "February 18, 2024",
       image: "https://i.ibb.co/Ry0K098/vr-property-tours.jpg",
       category: "Social Media"
@@ -838,7 +867,7 @@ function BlogPage({ darkMode }: { darkMode: boolean }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <h2 className="text-4xl font-bold font-poppins mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Blog</h2>
+      <h2 className="text-4xl font-bold font-poppins mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Insights & Articles</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {blogPosts.map((post, index) => (
           <motion.div
@@ -920,16 +949,16 @@ function ContactPage({ darkMode }: { darkMode: boolean }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <h2 className="text-4xl font-bold font-poppins mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Contact Me</h2>
+      <h2 className="text-4xl font-bold font-poppins mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Get in Touch</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <motion.div
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h3 className="text-2xl font-bold mb-4">Get in Touch</h3>
+          <h3 className="text-2xl font-bold mb-4">Let's Connect</h3>
           <p className={`mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-            I'm always open to new opportunities and collaborations. Whether you have a question about real estate, digital marketing, or just want to say hello, I'd love to hear from you!
+            I'm always open to new opportunities, collaborations, and exciting projects. Whether you have a question about real estate, digital marketing, or just want to say hello, I'd love to hear from you!
           </p>
           <div className={`space-y-4 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
             <div className="flex items-center">
@@ -964,39 +993,48 @@ function ContactPage({ darkMode }: { darkMode: boolean }) {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="name" className={`block mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className={`w-full px-4 py-2 rounded-lg ${darkMode ? 'bg-gray-700 text-white' : 'bg-white text-gray-900'} border ${darkMode ? 'border-gray-600' : 'border-gray-300'}`}
-              />
+              <div className="relative">
+                <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className={`w-full px-10 py-2 rounded-lg ${darkMode ? 'bg-gray-700 text-white' : 'bg-white text-gray-900'} border ${darkMode ? 'border-gray-600' : 'border-gray-300'}`}
+                />
+              </div>
             </div>
             <div>
               <label htmlFor="email" className={`block mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className={`w-full px-4 py-2 rounded-lg ${darkMode ? 'bg-gray-700 text-white' : 'bg-white text-gray-900'} border ${darkMode ? 'border-gray-600' : 'border-gray-300'}`}
-              />
+              <div className="relative">
+                <MdEmail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className={`w-full px-10 py-2 rounded-lg ${darkMode ? 'bg-gray-700 text-white' : 'bg-white text-gray-900'} border ${darkMode ? 'border-gray-600' : 'border-gray-300'}`}
+                />
+              </div>
             </div>
             <div>
               <label htmlFor="message" className={`block mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>Message</label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={4}
-                className={`w-full px-4 py-2 rounded-lg ${darkMode ? 'bg-gray-700 text-white' : 'bg-white text-gray-900'} border ${darkMode ? 'border-gray-600' : 'border-gray-300'}`}
-              ></textarea>
+              <div className="relative">
+                <MdMessage className="absolute left-3 top-3 text-gray-400" />
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={4}
+                  className={`w-full px-10 py-2 rounded-lg ${darkMode ? 'bg-gray-700 text-white' : 'bg-white text-gray-900'} border ${darkMode ? 'border-gray-600' : 'border-gray-300'}`}
+                ></textarea>
+              </div>
             </div>
             <motion.button
               type="submit"
@@ -1018,7 +1056,7 @@ function ContactPage({ darkMode }: { darkMode: boolean }) {
               animate={{ opacity: 1, y: 0 }}
               className="mt-4 text-green-500 font-semibold"
             >
-              Message sent successfully!
+              Thank you for your message! I'll get back to you soon.
             </motion.p>
           )}
           {submitStatus === 'error' && (
@@ -1027,7 +1065,7 @@ function ContactPage({ darkMode }: { darkMode: boolean }) {
               animate={{ opacity: 1, y: 0 }}
               className="mt-4 text-red-500 font-semibold"
             >
-              An error occurred. Please try again later.
+              Oops! Something went wrong. Please try again later.
             </motion.p>
           )}
         </motion.div>
@@ -1041,24 +1079,24 @@ function FAQPage({ darkMode }: { darkMode: boolean }) {
 
   const faqs = [
     {
-      question: "What real estate consulting services do you offer?",
-      answer: "I offer a wide range of real estate consulting services, including market analysis, property valuation, investment strategies, and portfolio optimization."
+      question: "What comprehensive real estate consulting services do you offer?",
+      answer: "I provide a wide range of real estate consulting services, including in-depth market analysis, property valuation, investment strategies, portfolio optimization, and development feasibility studies. My expertise helps clients make informed decisions in the dynamic real estate market, whether they're looking to invest, sell, or develop properties."
     },
     {
-      question: "How can digital marketing help in the real estate sector?",
-      answer: "Digital marketing can significantly increase property visibility, improve lead quality, and accelerate sales through strategies like social media marketing, SEO, and targeted advertising."
+      question: "How can digital marketing strategies benefit the real estate sector?",
+      answer: "Digital marketing significantly enhances property visibility, improves lead quality, and accelerates sales in the real estate sector. I implement tailored strategies like targeted social media campaigns, search engine optimization (SEO), content marketing, and email automation to reach potential buyers and sellers more effectively. These approaches not only increase online visibility but also help in building brand authority and trust in the competitive real estate market."
     },
     {
-      question: "What's your experience with real estate technology?",
-      answer: "I have extensive experience applying technology in real estate, including developing AI-powered valuation tools, virtual tour platforms, and custom CRM systems for real estate agencies."
+      question: "What's your experience with cutting-edge real estate technology?",
+      answer: "I have extensive experience applying cutting-edge technology in real estate, including developing AI-powered valuation tools, creating virtual and augmented reality tour platforms, implementing blockchain for secure transactions, and utilizing big data analytics for market predictions. These innovations help streamline processes, enhance the client experience, and provide valuable insights for decision-making in the real estate industry."
     },
     {
-      question: "How can I start investing in real estate?",
-      answer: "To start investing in real estate, I recommend educating yourself about the local market, defining your investment goals, and building a network of real estate professionals. I can help you develop a customized investment strategy that aligns with your goals and budget."
+      question: "How can I start investing in real estate with minimal risk?",
+      answer: "To start investing in real estate with minimal risk, I recommend first educating yourself about local market trends and regulations. Define your investment goals and risk tolerance. Start with REITs (Real Estate Investment Trusts) or crowdfunding platforms for lower initial investments. Consider house hacking or investing in rental properties in stable neighborhoods. Always conduct thorough due diligence, get professional inspections, and consider working with experienced real estate professionals. I can help you develop a customized investment strategy that aligns with your financial objectives and risk profile."
     },
     {
       question: "What are the latest digital marketing trends in real estate?",
-      answer: "The latest digital marketing trends in real estate include the use of AR and VR for property tours, video marketing, AI-powered personalization of customer experiences, and influencer marketing in the real estate niche."
+      answer: "The latest digital marketing trends in real estate include the use of augmented reality (AR) and virtual reality (VR) for immersive property tours, AI-powered chatbots for instant customer service, personalized email marketing campaigns based on user behavior, video marketing for showcasing properties and neighborhoods, leveraging social media influencers in the real estate niche, and using data analytics for hyper-targeted advertising. Additionally, voice search optimization and the use of drones for aerial photography and videography are becoming increasingly popular in real estate marketing."
     }
   ]
 
@@ -1113,10 +1151,10 @@ function FAQPage({ darkMode }: { darkMode: boolean }) {
 
 function AnimatedSection({ darkMode }: { darkMode: boolean }) {
   const items = [
-    { title: "Innovative Solutions", description: "Bringing cutting-edge technology to real estate" },
-    { title: "Data-Driven Decisions", description: "Leveraging analytics for smarter investments" },
-    { title: "Digital Transformation", description: "Revolutionizing the real estate industry" },
-    { title: "Client-Centric Approach", description: "Tailored strategies for your success" }
+    { title: "Innovative Solutions", description: "Leveraging cutting-edge technology to revolutionize real estate practices and digital marketing strategies" },
+    { title: "Data-Driven Decisions", description: "Utilizing advanced analytics and AI for smarter, more profitable investments and marketing campaigns" },
+    { title: "Digital Transformation", description: "Spearheading the digital revolution in the real estate industry with state-of-the-art tools and platforms" },
+    { title: "Client-Centric Approach", description: "Crafting tailored strategies to ensure your success in the ever-evolving real estate and digital marketing landscapes" }
   ]
 
   return (
@@ -1138,6 +1176,10 @@ function AnimatedSection({ darkMode }: { darkMode: boolean }) {
             initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
+            whileHover={{
+              scale: 1.05,
+              boxShadow: `0 0 20px ${darkMode ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)'}`,
+            }}
           >
             <h3 className="text-2xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">{item.title}</h3>
             <p className={`text-lg ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>{item.description}</p>
@@ -1164,7 +1206,7 @@ function Footer({ darkMode }: { darkMode: boolean }) {
               </span>
             </h3>
             <p className={`${darkMode ? 'text-gray-400' : 'text-gray-600'} mb-6`}>
-              Empowering businesses with innovative digital strategies and cutting-edge real estate solutions.
+              Empowering businesses with innovative digital strategies and cutting-edge real estate solutions. Let's shape the future of real estate together.
             </p>
             <div className="flex space-x-4">
               <SocialIcon Icon={FaFacebookF} url="https://facebook.com/Omar.Tnzxo" darkMode={darkMode} />
@@ -1172,7 +1214,7 @@ function Footer({ darkMode }: { darkMode: boolean }) {
               <SocialIcon Icon={FaLinkedin} url="https://LinkedIn.com/in/Omar-Tnzxo" darkMode={darkMode} />
               <SocialIcon Icon={FaTiktok} url="https://tiktok.com/@omar.tnzxo" darkMode={darkMode} />
               <SocialIcon Icon={FaTelegram} url="https://t.me/Omar_Tnzxo" darkMode={darkMode} />
-              <SocialIcon Icon={FaTwitter} url="https://x.com/OmarTnzx o" darkMode={darkMode} />
+              <SocialIcon Icon={FaTwitter} url="https://x.com/OmarTnzxo" darkMode={darkMode} />
               <SocialIcon Icon={FaGithub} url="https://github.com/Omar-Tnzxo" darkMode={darkMode} />
               <SocialIcon Icon={FaWhatsapp} url="https://wa.me/+201029752972" darkMode={darkMode} />
             </div>
