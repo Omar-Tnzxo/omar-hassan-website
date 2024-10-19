@@ -408,7 +408,7 @@ function AboutPage({ darkMode }: { darkMode: boolean }) {
           transition={{ duration: 0.5 }}
         >
           <h3 className="text-3xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
-            Omar Hassan
+            I'm Omar Hassan
           </h3>
           <p className={`text-lg mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
             As a passionate real estate consultant and digital marketing expert with 2 years of experience since 2023, I've dedicated my career to bridging the gap between traditional real estate practices and cutting-edge digital strategies.

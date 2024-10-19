@@ -1,5 +1,9 @@
-import { EnhancedPersonalWebsite } from "@/components/components-enhanced-personal-website"
+import EnhancedPersonalWebsite from '../components/components-enhanced-personal-website.tsx'
 
-export default function Page() {
-  return <EnhancedPersonalWebsite />
+export default function Home() {
+  return (
+    <main>
+      <EnhancedPersonalWebsite />
+    </main>
+  )
 }
