@@ -6,6 +6,7 @@
   NODE_VERSION = "18"
   CI = "false"
   NPM_FLAGS = "--legacy-peer-deps"
+  VITE_BASE_URL = "./"
 
 [[redirects]]
   from = "/*"

@@ -38,5 +38,7 @@ export default defineConfig({
   },
   // إضافة إعدادات إضافية لحل مشكلة المسارات في Netlify
   publicDir: 'public',
-  root: process.cwd()
+  root: process.cwd(),
+  // إضافة إعدادات إضافية لحل مشكلة المسارات
+  base: './'
 });
