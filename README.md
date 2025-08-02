@@ -1,36 +1,126 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<a name="readme-top"></a>
 
-## Getting Started
+# Omar Hassan - Portfolio Website
 
-First, run the development server:
+موقع شخصي احترافي لعمر حسن - متخصص التسويق الرقمي ونمو الأعمال
+
+## 🚀 النشر على Netlify
+
+### الطريقة الأولى: النشر المباشر من GitHub
+
+1. **ادفع الكود إلى GitHub:**
+   ```bash
+   git add .
+   git commit -m "Ready for Netlify deployment"
+   git push origin main
+   ```
+
+2. **اذهب إلى Netlify:**
+   - افتح [https://app.netlify.com/teams/omar-tnzxo/projects](https://app.netlify.com/teams/omar-tnzxo/projects)
+   - اضغط على "New site from Git"
+   - اختر GitHub وحدد المستودع `omar-portfolio`
+
+3. **إعدادات البناء:**
+   - **Build command:** `npm run build`
+   - **Publish directory:** `dist`
+   - **Node version:** `18`
+
+4. **اضغط "Deploy site"**
+
+### الطريقة الثانية: النشر من الملفات المحلية
+
+1. **ابن المشروع:**
+   ```bash
+   npm install
+   npm run build
+   ```
+
+2. **اسحب مجلد `dist` إلى Netlify:**
+   - اذهب إلى [https://app.netlify.com/teams/omar-tnzxo/projects](https://app.netlify.com/teams/omar-tnzxo/projects)
+   - اسحب مجلد `dist` إلى منطقة النشر
+
+## 🛠️ التطوير المحلي
 
 ```bash
+# تثبيت التبعيات
+npm install
+
+# تشغيل خادم التطوير
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# بناء المشروع للإنتاج
+npm run build
+
+# معاينة البناء
+npm run preview
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📁 بنية المشروع
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+omar-website/
+├── src/
+│   ├── components/          # مكونات React
+│   │   ├── BusinessCard.tsx # البطاقة الرقمية الجديدة
+│   │   └── ...
+│   ├── assets/             # الصور والملفات الثابتة
+│   ├── constants/          # الثوابت والإعدادات
+│   └── utils/              # الأدوات المساعدة
+├── public/                 # الملفات العامة
+├── netlify.toml           # إعدادات Netlify
+└── package.json           # تبعيات المشروع
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🎨 المميزات
 
-## Learn More
+### 🌟 المميزات الأساسية
+- ✅ تصميم متجاوب (Responsive Design)
+- ✅ رسوم متحركة ثلاثية الأبعاد (Three.js)
+- ✅ تأثيرات بصرية متقدمة (GSAP)
+- ✅ تحسين الأداء (Performance Optimization)
+- ✅ SEO محسن
+- ✅ دعم متعدد اللغات (عربي/إنجليزي)
 
-To learn more about Next.js, take a look at the following resources:
+### 🆕 المميزات الجديدة
+- ✅ **بطاقة عمل رقمية** - رابط `/avenue-omar`
+- ✅ تصميم زجاجي حديث (Glassmorphism)
+- ✅ خلفية متحركة مع تأثيرات blob
+- ✅ أزرار تفاعلية متقدمة
+- ✅ تأثيرات hover محسنة
+- ✅ انيميشن دخول متدرج
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔧 التقنيات المستخدمة
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Frontend:** React 18, TypeScript, Vite
+- **Styling:** Tailwind CSS, Framer Motion
+- **3D Graphics:** Three.js, React Three Fiber
+- **Animations:** GSAP, Framer Motion
+- **Icons:** Lucide React
+- **Deployment:** Netlify
 
-## Deploy on Vercel
+## 📱 الصفحات المتاحة
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 🏠 الصفحة الرئيسية
+- **الرابط:** `/`
+- **المحتوى:** Portfolio كامل مع جميع الأقسام
+- **المميزات:** انيميشن دخول، تصميم متجاوب
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 💼 البطاقة الرقمية
+- **الرابط:** `/avenue-omar`
+- **المحتوى:** بطاقة عمل رقمية احترافية
+- **المميزات:** تصميم زجاجي، أزرار تفاعلية، وسائل التواصل
+
+## 📞 التواصل
+
+- **Email:** omar-agha@engineer.com
+- **LinkedIn:** [linkedin.com/in/omar-hassan-marketing](https://linkedin.com/in/omar-hassan-marketing)
+- **Phone:** +201029752972
+- **Business Card:** `/avenue-omar`
+
+## 📄 الترخيص
+
+MIT License - انظر ملف [LICENSE.md](LICENSE.md) للتفاصيل.
+
+---
+
+**تم التطوير بواسطة عمر حسن** 🚀

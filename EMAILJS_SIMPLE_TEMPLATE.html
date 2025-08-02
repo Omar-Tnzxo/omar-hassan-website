@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Contact Message - Omar Hassan Portfolio</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        /* Email Container */
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #915EFF, #667eea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 40px 30px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #1a1a2e;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(45deg, #915EFF, #667eea);
+            border-radius: 2px;
+        }
+
+        /* Message Card */
+        .message-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 5px solid #915EFF;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .message-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #915EFF, #667eea);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            text-transform: uppercase;
+            overflow: hidden;
+            text-align: center;
+            line-height: 1;
+        }
+
+        .sender-info h3 {
+            color: #1a1a2e;
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .sender-info p {
+            color: #6c757d;
+            font-size: 0.95rem;
+        }
+
+        /* Message Content */
+        .message-content {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #e9ecef;
+            margin-bottom: 20px;
+        }
+
+        .message-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #495057;
+            white-space: pre-wrap;
+        }
+
+        /* Contact Details */
+        .contact-details {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .contact-details h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #915EFF;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+
+        .contact-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            opacity: 0.8;
+        }
+
+        .contact-text {
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            margin-top: 15px;
+        }
+
+        .footer-link {
+            display: inline-block;
+            margin: 0 10px;
+            color: #915EFF;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer-link:hover {
+            color: #667eea;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .email-container {
+                border-radius: 15px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .logo {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .main-content {
+                padding: 30px 20px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .message-card {
+                padding: 20px;
+            }
+
+            .message-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .avatar {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+
+            .message-content {
+                padding: 20px;
+            }
+
+            .contact-details {
+                padding: 20px;
+            }
+
+            .footer {
+                padding: 25px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 25px 15px;
+            }
+
+            .main-content {
+                padding: 25px 15px;
+            }
+
+            .message-card {
+                padding: 15px;
+            }
+
+            .message-content {
+                padding: 15px;
+            }
+
+            .contact-details {
+                padding: 15px;
+            }
+
+            .footer {
+                padding: 20px 15px;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Utility Classes */
+        .text-gradient {
+            background: linear-gradient(45deg, #915EFF, #667eea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            background: linear-gradient(45deg, #915EFF, #667eea);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container fade-in">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <div class="logo">Omar Hassan</div>
+                <div class="subtitle">Digital Marketing & Growth Specialist</div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <h2 class="section-title">New Contact Message</h2>
+
+            <!-- Message Card -->
+            <div class="message-card">
+                <div class="message-header">
+                    <div class="avatar">{{from_name:0:1}}</div>
+                    <div class="sender-info">
+                        <h3>{{from_name}}</h3>
+                        <p>{{from_email}}</p>
+                    </div>
+                </div>
+
+                <div class="message-content">
+                    <div class="message-text">{{message}}</div>
+                </div>
+
+                <div style="text-align: center; margin-top: 20px;">
+                    <span class="badge">Portfolio Contact</span>
+                </div>
+            </div>
+
+            <!-- Contact Details -->
+            <div class="contact-details">
+                <h4>📧 Contact Information</h4>
+                <div class="contact-item">
+                    <span class="contact-icon">👤</span>
+                    <span class="contact-text"><strong>Name:</strong> {{from_name}}</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <span class="contact-text"><strong>Email:</strong> {{from_email}}</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📅</span>
+                    <span class="contact-text"><strong>Date:</strong> {{date}}</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🕒</span>
+                    <span class="contact-text"><strong>Time:</strong> {{time}}</span>
+                </div>
+            </div>
+
+            <!-- Technical Details -->
+            <div class="contact-details" style="margin-top: 20px;">
+                <h4>🔍 Technical Information</h4>
+                <div class="contact-item">
+                    <span class="contact-icon">🌐</span>
+                    <span class="contact-text"><strong>IP Address:</strong> {{ip_address}}</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <span class="contact-text"><strong>Location:</strong> {{location}}</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🌍</span>
+                    <span class="contact-text"><strong>Country:</strong> {{country}}</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🏙️</span>
+                    <span class="contact-text"><strong>City:</strong> {{city}}</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🌐</span>
+                    <span class="contact-text"><strong>Browser:</strong> {{browser}}</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">💻</span>
+                    <span class="contact-text"><strong>Device:</strong> {{device}}</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📱</span>
+                    <span class="contact-text"><strong>Platform:</strong> {{platform}}</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🔗</span>
+                    <span class="contact-text"><strong>Referrer:</strong> {{referrer}}</span>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div style="text-align: center; margin: 30px 0;">
+                <p style="color: #6c757d; margin-bottom: 15px;">Quick Actions:</p>
+                <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                    <a href="mailto:{{from_email}}?subject=Re: Portfolio Contact" 
+                       style="display: inline-block; padding: 12px 24px; background: linear-gradient(45deg, #915EFF, #667eea); color: white; text-decoration: none; border-radius: 25px; font-weight: 500;">
+                        📧 Reply Now
+                    </a>
+                    <a href="https://linkedin.com/in/omar-tnzxo" 
+                       style="display: inline-block; padding: 12px 24px; background: #0077b5; color: white; text-decoration: none; border-radius: 25px; font-weight: 500;">
+                        💼 LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-content">
+                <p>This message was sent from your portfolio website contact form.</p>
+                <p style="margin-top: 10px;">© 2025 Omar Hassan. All rights reserved.</p>
+                
+                <div class="footer-links">
+                    <a href="https://github.com/omar-tnzxo" class="footer-link">GitHub</a>
+                    <a href="https://linkedin.com/in/omar-tnzxo" class="footer-link">LinkedIn</a>
+                    <a href="https://twitter.com/omar.tnzxo" class="footer-link">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html> 

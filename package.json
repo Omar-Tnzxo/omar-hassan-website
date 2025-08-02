@@ -1,34 +1,70 @@
 {
-  "name": "omar-agha-website-v10",
-  "version": "0.1.0",
+  "name": "omar-portfolio",
+  "version": "1.0.0",
   "private": true,
+  "author": {
+    "name": "Omar Hassan",
+    "email": "omar-agha@engineer.com",
+    "url": "https://github.com/omar-tnzxo"
+  },
+  "description": "Omar Hassan - Digital Marketing & Growth Specialist Portfolio",
+  "keywords": [
+    "omar hassan",
+    "digital marketing",
+    "growth specialist",
+    "real estate marketing",
+    "CalcRealty",
+    "flutter developer",
+    "marketing coordinator",
+    "egypt"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/omar-tnzxo/omar-portfolio.git"
+  },
+  "homepage": "https://github.com/omar-tnzxo/omar-portfolio#readme",
+  "bugs": {
+    "url": "https://github.com/omar-tnzxo/omar-portfolio/issues",
+    "email": "omar-agha@engineer.com"
+  },
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
-    "@radix-ui/react-icons": "^1.3.0",
-    "class-variance-authority": "^0.7.0",
+    "@emailjs/browser": "^4.4.1",
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.17.14",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.11.9",
-    "lucide-react": "^0.453.0",
-    "next": "14.2.15",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-icons": "^5.3.0",
-    "tailwind-merge": "^2.5.4",
-    "tailwindcss-animate": "^1.0.7"
+    "framer-motion": "^12.23.12",
+    "lenis": "^1.3.8",
+    "lucide-react": "^0.536.0",
+    "maath": "^0.10.8",
+    "prop-types": "^15.8.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^6.20.1",
+    "react-tilt": "^1.0.2",
+    "react-vertical-timeline-component": "^3.6.0",
+    "sonner": "^2.0.6",
+    "tailwind-merge": "^3.3.1",
+    "three": "^0.175.0"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.15",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/react-vertical-timeline-component": "^3.3.6",
+    "@types/tailwindcss": "^3.1.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.8.3",
+    "vite": "^5.0.0"
   }
 }
