@@ -30,5 +30,9 @@ export default defineConfig({
   // إضافة إعدادات إضافية لحل مشكلة المسارات
   define: {
     global: 'globalThis',
+  },
+  // إضافة إعدادات إضافية لحل مشكلة المسارات في Netlify
+  resolve: {
+    preserveSymlinks: true
   }
 });
