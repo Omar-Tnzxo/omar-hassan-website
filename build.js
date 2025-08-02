@@ -7,11 +7,34 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 console.log('Starting custom build process...');
+console.log('Current directory:', __dirname);
 
-// Check if src/main.tsx exists
-const mainTsxPath = path.join(__dirname, 'src', 'main.tsx');
-if (!fs.existsSync(mainTsxPath)) {
-  console.error('Error: src/main.tsx not found!');
+// Check multiple possible paths for src/main.tsx
+const possiblePaths = [
+  path.join(__dirname, 'src', 'main.tsx'),
+  path.join(process.cwd(), 'src', 'main.tsx'),
+  path.join(__dirname, '..', 'src', 'main.tsx')
+];
+
+let mainTsxPath = null;
+for (const testPath of possiblePaths) {
+  console.log('Checking path:', testPath);
+  if (fs.existsSync(testPath)) {
+    mainTsxPath = testPath;
+    console.log('Found src/main.tsx at:', mainTsxPath);
+    break;
+  }
+}
+
+if (!mainTsxPath) {
+  console.error('Error: src/main.tsx not found in any of the expected locations!');
+  console.log('Available files in current directory:');
+  try {
+    const files = fs.readdirSync(__dirname);
+    console.log(files);
+  } catch (error) {
+    console.log('Could not read directory:', error.message);
+  }
   process.exit(1);
 }
 

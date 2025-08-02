@@ -33,6 +33,7 @@
     "dev": "vite",
     "build": "node build.js",
     "build:vite": "vite build",
+    "build:vercel": "node vercel-build.js",
     "preview": "vite preview",
     "check-types": "tsc --noEmit"
   },
